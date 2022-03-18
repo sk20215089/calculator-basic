@@ -1,0 +1,112 @@
+#include<stdio.h>
+void main()
+{
+	int n,n2=1,num,cal;
+            long double p,q;
+	while(n>0) //loop to create a menu that runs till u press exit
+	{
+		printf("1.calculator\n");
+		printf("2. to check even or odd\n");
+		printf("3.exit\n \n");
+		printf("enter the choice you want to select:");
+		scanf("%d",&num);
+		switch(num)
+		{
+			case 1: //to open calculator using nested switch
+				while(n2>0)
+				{
+					printf("1.ADDITION\n");
+                			             printf("2.SUBTRACTION\n");
+					printf("3.MULTIPLICATION\n");
+					printf("4.DIVISION\n");
+					printf("5.EXIT\n");
+					printf("Enter the choice you want to select:");
+					scanf("%d",&cal);
+					printf("\n");
+					switch(cal)
+					{
+						case 1: //a case for each option of calculator
+							printf("enter the total numbers to be added:");
+							int tot1;
+							scanf("%d",&tot1);
+							printf("\n");
+							int i1,s1=0,d1;
+							for(i1=0;i1<tot1;i1++)
+							{
+								printf("enter the number to be added:");
+								scanf("%d",&d1);
+								printf("\n");
+								s1+=d1;
+ 							}
+							printf("the total sum is %d \n",s1);
+							break;
+						case 2:
+							printf("enter the total numbers to be subtracted:");
+							int tot2;
+							scanf("%d",&tot2);
+							printf("\n");
+							int i2,s2=0,d2;
+							printf("enter the first number from which u need to subtract");
+                                        		scanf("%d",&s2);
+							printf("\n");
+							for(i2=0;i2<tot2;i2++)
+							{
+								printf("enter the number to be subtracted:");
+								scanf("%d",&d2);
+								printf("\n");
+								s2-=d2;
+ 							}
+							printf("the total  is %d \n",s2);
+							break;
+						case 3:
+							printf("enter the total numbers to be multiplied:");
+							int tot3;
+							scanf("%d",&tot3);
+							printf("\n");
+							int i3,s3=1,d3;
+							for(i3=0;i3<tot3;i3++)
+							{
+								printf("enter the number to be multiplied:");
+								scanf("%d",&d3);
+								printf("\n");
+								s3*=d3;
+ 							}
+							printf("the total is %d \n",s3);
+							break;
+						case 4:
+                                        		printf("enter the first number");
+                                        		scanf("%Lf",&p);
+							printf("\n");
+                                        		printf("enter the second number");
+                                        		scanf("%Lf",&q);
+							printf("\n");
+							printf("the total is %Lf \n",p/q);
+							break;
+						case 5:
+							n2=-1;
+							break;
+						default:
+							printf("wrong value entered");
+							break;
+						}
+				}
+				break;
+			case 2:
+				printf("enter the number to check ");
+				unsigned int w;
+				scanf("%u",&w);
+				printf("\n");
+				if(n%2==0)
+				printf("the given number is even /n");
+				else
+				printf("it is odd /n");
+				break;
+			case 3: // to end the loop and come out of the loop
+				n=-1;
+				break;
+			default:
+				printf("wrong choice entered ");
+				break;
+		}
+	}
+}
